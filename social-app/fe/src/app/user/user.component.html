@@ -1,0 +1,26 @@
+<form>
+  <div class="form-group">
+    <input type="text" name="filterText" [(ngModel)]="filterText"
+        class="form-control" placeholder="search a user" required>
+  </div>
+</form>
+<div class="container marketing">
+  <hr class="featurette-divider">
+  <div *ngFor="let user of userService.users | userFilter: filterText">
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">{{user.name | uppercase}}
+          <span class="text-muted">It'll blow your mind.</span>
+        </h2>
+        <p class="lead">{{user.description}} Donec ullamcorper nulla non metus auctor fringilla.</p>
+        <button class="btn btkn-lg btn-success">See my posts</button>
+      </div>
+      <div class="col-md-5">
+        <img class="featurette-image img-fluid mx-auto" src="https://cdn0.iconfinder.com/data/icons/avatar-vol-4/512/2-512.png"
+          alt="Generic placeholder image">
+      </div>
+    </div>
+    
+    <hr class="featurette-divider">
+  </div>
+</div>
