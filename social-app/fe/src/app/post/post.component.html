@@ -1,3 +1,7 @@
+<div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+  {{errorMessage}}
+</div>
+
 <form>
   <div class="form-group">
     <input type="text" name="postMessage" [(ngModel)]="postMsg"

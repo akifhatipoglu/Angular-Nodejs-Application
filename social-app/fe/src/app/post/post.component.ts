@@ -10,10 +10,14 @@ export class PostComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   postMsg = "";
-
+  errorMessage = "";
   ngOnInit() {}
 
   post() {
-    this.userService.postMessage({ 'message': this.postMsg });
+    try {
+      this.userService.postMessage({ message: this.postMsg });
+    } catch (error) {
+      this.errorMessage = "Bir hata oluştu!";
+    }
   }
 }
